@@ -1,0 +1,32 @@
+//
+// This file defines common settings that are shared between projects by
+// Numero Labs.
+//
+
+// The name of the product, by default we use the same definition as is default
+// in the OS settings.
+NUMERO_LABS_PRODUCT_NAME = $(TARGET_NAME)
+
+// A suffix which should be appended to the products bundle identifier.
+// For example; -ios
+NUMERO_LABS_BUNDLE_ID_SUFFIX =
+
+// The most significant part of the bundle identifier of the product.
+// That is the part after
+NUMERO_LABS_BUNDLE_ID_SIGNIFICANT_PART = $(NUMERO_LABS_PRODUCT_NAME)$(NUMERO_LABS_BUNDLE_ID_SUFFIX)
+
+// The full bundle identifier of the product.
+// Can and should be used in the Info.plist file.
+NUMERO_LABS_BUNDLE_ID = com.numerolabs.$(NUMERO_LABS_BUNDLE_ID_SIGNIFICANT_PART:rfc1034identifier:lower)
+
+// The name of the module.
+NUMERO_LABS_MODULE_NAME = $(NUMERO_LABS_PRODUCT_NAME)
+
+//
+// Overrides of OS defaults for great good.
+
+// Set the product name to our custom value.
+PRODUCT_NAME = $(NUMERO_LABS_PRODUCT_NAME)
+
+// Set the module name to our custom value.
+MODULE_NAME = $(NUMERO_LABS_MODULE_NAME)
